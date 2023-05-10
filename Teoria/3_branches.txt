@@ -1,0 +1,6 @@
+- BGT --> fa il branch se maggiore              > 0
+- BGE --> fa il branch se maggiore uguale       >= 0
+- BLE --> fa il branch se minore uguale         <= 0
+- BLT --> fa il branch se minore                < 0
+- BEQ --> fa il branch se uguale                = 0
+- BNE --> fa il branch se non è uguale          != 0

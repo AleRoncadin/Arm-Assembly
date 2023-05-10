@@ -1,0 +1,31 @@
+BL e BX: con questi salti vai alla funzione e poi torni al punto in cui avevi fatto il salto. Vediamo un esempio:
+
+_start:
+  mov r0, #1
+  bl add2
+  mov r1, #6
+
+add2:
+  add r0, r0, #2
+  bx lr
+
+
+
+è più conveniente usare subs al posto di fare dei cmp perché risparmi registri
+e anche il numero di istruzioni.
+Ad esempio:
+
+subs r1, r1, #1             cmp r2, r1
+bgt loop                    ble exit
+ble exit                    subgt r2, r2, #1
+
+
+Salvare gli elementi di un vettore in più registri. esempio
+array:
+  .word 1, 6, 9
+
+  ldr r0, =array
+  ldmia r0!, {r1-r3}      salvo in r1, r2, r3 i valori in ordine dell'array
+
+Viceversa, posso anche caricare più elementi in un registro
+
