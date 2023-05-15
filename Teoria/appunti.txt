@@ -49,3 +49,13 @@ Software Interrupt:
 -   swi 0x6b --> write int          in r0 il nome del file, in r1 va l'intero
 -   swi 0x6c --> read int           in r0 il nome del file, mette in r0 l'intero
 
+Le liste sono strutture dinamiche perché la loro dimensione e struttura può cambiare durante l'esecuzione.
+Le liste possono anche essere create e distrutte nel corso del programma, mentre l'array ha
+dimensione fissa e predefinita.
+
+I dati delle liste sono contenuti all'interno di nodi collegati tra loro tramite puntatori.
+Il nodo contiene:
+- il dato
+- un puntatore che punta al nodo successivo
+
+L'ultimo nodo contiene un puntatore nullo.
