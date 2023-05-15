@@ -29,3 +29,23 @@ array:
 
 Viceversa, posso anche caricare più elementi in un registro
 
+Keyword:
+-   GT  > 0
+-   GE  >= 0
+-   LE  <= 0
+-   LT  < 0
+-   EQ  = 0
+-   NE  != 0
+
+Software Interrupt:
+-   swi 0x00 --> print_char         in r0 va il carattere
+-   swi 0x02 --> print_string       in r0 va l'indirizzo della stringa
+-   swi 0x11 --> exit
+-   swi 0x12 --> allocate           in r0 va la dimensione
+-   swi 0x66 --> open               in r0 il nome del file, in r1 va la modalità di apertura
+-   swi 0x68 --> close              in r0 il nome del file
+-   swi 0x69 --> write str          in r0 il nome del file, in r1 va la stringa
+-   swi 0x6a --> read str           in r0 il nome del file, in r1 la stringa, in r2 va la dimensione
+-   swi 0x6b --> write int          in r0 il nome del file, in r1 va l'intero
+-   swi 0x6c --> read int           in r0 il nome del file, mette in r0 l'intero
+
