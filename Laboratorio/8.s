@@ -11,21 +11,23 @@
 
 
 .data
-    numeri: .word -1, -8, 3, 4
+numeri: 
+    .word -1, -8, 3, 4
 
 .text
-    main:   ldr r0, =numeri
-            ldr r1, [r0]
-            ldr r2, [r0, #4]
-            ldr r3, [r0, #8]
-            ldr r4, [r0, #12]
+main:   
+    ldr r0, =numeri
+    ldr r1, [r0]
+    ldr r2, [r0, #4]
+    ldr r3, [r0, #8]
+    ldr r4, [r0, #12]
 
-            add r6, r1, r2
-            add r6, r6, r3
-            add r6, r6, r4              @ somma di tutti i numeri
+    add r6, r1, r2
+    add r6, r6, r3
+    add r6, r6, r4              @ somma di tutti i numeri
 
-            mov r7, r6, asr #2          @ divisione per 4 per ottenere la media
+    mov r7, r6, asr #2          @ divisione per 4 per ottenere la media
 
-            add r2, r6, r6, lsl #10     @ esegue n1 + (n1 x 2^10)
+    add r2, r6, r6, lsl #10     @ esegue n1 + (n1 x 2^10)
 
-            mov r8, r1, lsr #31         @ sposto a sinistra di 31 bit per il segno
+    mov r8, r1, lsr #31         @ sposto a sinistra di 31 bit per il segno
